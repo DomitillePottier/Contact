@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ajout de contacts</title>
+</head>
+<style>
+    body {
+        background-color: lightpink;
+    }
+    table {
+        border: 1px solid black;
+        text-align: center;
+    }
+    td {
+        border: 1px solid black;
+        text-align: center;
+    }
+    thead{
+        font-weight: bolder;
+    }
+</style>
+<body>
+    <h1>Interface d'ajouts de contacts</h1>
+    <h2><a th:href="@{list}">Liste de contacts</a> </h2>
+    <form action="" th:action="@{/contact/put}" th:object="${contactForm}" method="post">
+        <table>
+            <thead>
+                <td>Prénom</td>
+                <td>Nom</td>
+                <td>Erreurs ?</td>
+            </thead>
+            <tr>
+                <td>First Name:</td>
+                <td><input type="text" th:field="*{firstName}" /></td>
+                <td th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">Name Error</td>
+            </tr>
+            <tr>
+                <td>Last Name:</td>
+                <td><input type="text" th:field="*{lastName}" /></td>
+                <td th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Name Error</td>
+            </tr>
+            <tr>
+                <td colspan="3"><button type="submit">Soumettre</button></td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

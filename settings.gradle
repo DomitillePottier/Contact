@@ -1,0 +1,6 @@
+rootProject.name = 'JavaSpring'
+
+include 'controller'
+include 'model'
+include 'view'
+
