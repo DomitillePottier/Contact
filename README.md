@@ -2,7 +2,7 @@
 ### Domitille POTTIER
 
 ---
-![Utilisation de la liste de contact] (/contact.gif)
+![Utilisation de la liste de contact] (contact.gif)
 
 ---
 API :
